@@ -1,9 +1,14 @@
 import React from 'react';
+import { getUsers } from '../lib/data';
+import UsersTable from '@/components/UsersTable';
 
-const UsersPage = () => {
+const UsersPage = async() => {
+    const users = await getUsers();
+
     return (
         <div>
-            <h2>Users Management</h2>
+            <h2>Users Management: {users.length}</h2>
+            <UsersTable users={users}></UsersTable>
         </div>
     );
 };
