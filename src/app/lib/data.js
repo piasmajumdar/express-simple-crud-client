@@ -3,3 +3,7 @@ export const getUsers = async()=>{
     const data = await res.json();
     return data;
 }
+
+export const getUserById = async(userId)=>{
+
+}
