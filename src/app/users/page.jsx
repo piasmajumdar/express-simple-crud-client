@@ -1,7 +1,7 @@
 import React from 'react';
 import { getUsers } from '../lib/data';
 import UsersTable from '@/components/UsersTable';
-import { deleteUser } from '../lib/action';
+import { createUser, deleteUser } from '../lib/action';
 import AddUserModal from '@/components/AddUserModal';
 
 const UsersPage = async () => {
@@ -12,7 +12,7 @@ const UsersPage = async () => {
 
             <div className='py-6 flex justify-between'>
                 <h2>Users Management: {users.length}</h2>
-                <AddUserModal></AddUserModal>
+                <AddUserModal createUserAction={createUser}></AddUserModal>
             </div>
             <UsersTable users={users} deleteUserAction={deleteUser}></UsersTable>
         </div>
